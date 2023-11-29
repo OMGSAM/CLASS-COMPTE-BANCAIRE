@@ -1,0 +1,65 @@
+#coding: utf-8
+class CompteBancaire:
+        counter =0
+    def __init__(self, idNumber, nomPrenom, solde,password):
+        self.idNumber = idNumber
+        self.nomPrenom = nomPrenom
+        self.solde = solde
+        self.password=password
+	      CompteBancaire.counter +=1
+         
+    
+    def deposer (self, argent):
+        self.solde = self.solde + argent
+   
+    def retrait(self, argent):
+        if(self.solde < argent):
+            print(" Impossible d'effectuer l'opération. Solde insuffisant !")
+        else:
+            self.solde = self.solde - argent
+   
+    def setpass(self,passw):
+        self.password=passw
+   
+    def afficher(self):
+        print("Compte numéro : " , self.idNumber)
+        print("Nom & Prénom : ", self.nomPrenom)
+        print(" Solde  : ", self.solde , " DH ")
+        print(" password  : ", self.password)
+
+W = []
+n=int(input("donnez un numero"))
+print("MENU : "  )
+print("1-AJOUTER CLIENT : " )
+print(" 2-SUPRIMER CLIENT  : " )
+print(" 3-MODIFIER CLIENT  : "  )
+x=int(input("donnez votre choix "))   
+
+
+              idNumber=input("donnez le id")
+              nomPrenom=input("donnez le nom et prenom")
+              solde=int(input("donnez le solde"))
+              password= int(input("donnez le pass"))
+              T=CompteBancaire(idNumber,nomPrenom,solde,password)
+              W=append(T)
+ 
+def Suprimer(number) :
+            for i in range(n) :
+               if idNumber==W[i].idNumber :
+                   del W[i]
+                    n=n-1
+                    i=i-1   
+      
+ def info() :
+        print(W)
+        
+ def setpass(password,a) :
+        for i in range (n) :
+          if password==W[i].password :
+             W[i].password=a
+
+
+
+       
+       
+ 
